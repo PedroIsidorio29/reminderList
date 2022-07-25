@@ -1,0 +1,10 @@
+{
+  "expo": {
+    "name": "reminderList",
+    "slug": "reminderList",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
