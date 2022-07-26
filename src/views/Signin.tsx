@@ -10,7 +10,7 @@ export function SignIn() {
             <List width="100" height="100" />
 
             <Heading color="gray.100" fontSize="xl" mt={20} mb={6} >
-                Acesse sua conta
+                Acesse sua conta!
             </Heading>
 
             <Input
