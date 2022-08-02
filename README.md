@@ -27,6 +27,7 @@
   * [Native Base](https://nativebase.io/)
   * [Google Fonts](https://fonts.google.com)
   * [Icon Gallery](https://www.themoviedb.org)
+  * [Expo Cli](https://docs.expo.dev/workflow/expo-cli/)
 
   <p align="right">(<a href="#top">back to top</a>)</p>
 </div>
