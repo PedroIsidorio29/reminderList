@@ -1,19 +1,19 @@
 import React from 'react';
 import { useState } from 'react';
 import { HStack, VStack, Image, Text, Flex, IconButton, useTheme, Heading, FlatList, Center } from 'native-base';
-import { SignOut,ChatTeardropText } from "phosphor-react-native";    
+import { SignOut, ChatTeardropText } from "phosphor-react-native";
 import { Button } from '../components/button';
 import { Filter } from '../components/filter';
 import { Order, OrderProps } from '../components/order';
 
 export function Home() {
     const [statusSelected, setStatusSelected] = useState<'open' | 'closed'>('open');
-    const [orders, setOrders] = useState<OrderProps[]>([{
+    const [orders, setOrders] = useState<OrderProps[]>([/* {
         id: '123',
         patrimony: "999999",
         when: "18/08/2021 às 12:55",
         status: "open"
-    }]);
+    } */]);
 
 
     const { colors } = useTheme();
@@ -78,12 +78,20 @@ export function Home() {
                     keyExtractor={(item) => item.id}
                     renderItem={({ item }) => <Order data={item} />}
                     showsVerticalScrollIndicator={false}
-                    contentContainerStyle={{paddingBottom:50}}
-                    ListEmptyComponent={()=>    (
+                    contentContainerStyle={{ paddingBottom: 50 }}
+                    ListEmptyComponent={() => (
                         <Center>
-                            <ChatTeardropText color={colors.gray[300]}/>
+                            <ChatTeardropText color={colors.gray[300]} />
+                            <Text color="gray.300" fontSize="xl" mt={6} textAlign="center">
+                                Você ainda não possui {"\n"} solicitações
+                                {
+                                    statusSelected === "open"
+                                        ? " em andamento"
+                                        : " finalizadas"
+                                }
+                            </Text>
                         </Center>
-                    )    }
+                    )}
                 />
 
                 <Button title="Nova Solicitação" />
