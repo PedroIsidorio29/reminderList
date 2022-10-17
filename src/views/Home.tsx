@@ -9,13 +9,21 @@ import { useNavigation } from '@react-navigation/native'
 
 export function Home() {
     const [statusSelected, setStatusSelected] = useState<'open' | 'closed'>('open');
-    const [orders, setOrders] = useState<OrderProps[]>([]);
+    const [orders, setOrders] = useState<OrderProps[]>([{
+        id: '1',
+        patrimony: "123456",
+        when: "18/07/2020 às 14:00",
+        status: 'open',
+    }]);
 
     const navigation = useNavigation();
     const { colors } = useTheme();
 
     function handleNewOrder() {
         navigation.navigate('new');
+    }
+    function handleOpenDatails(orderId: string) {
+        navigation.navigate('details', { orderId });
     }
 
     return (
@@ -76,7 +84,7 @@ export function Home() {
                 <FlatList
                     data={orders}
                     keyExtractor={(item) => item.id}
-                    renderItem={({ item }) => <Order data={item} />}
+                    renderItem={({ item }) => <Order data={item} onPress={() => handleOpenDatails(item.id)} />}
                     showsVerticalScrollIndicator={false}
                     contentContainerStyle={{ paddingBottom: 50 }}
                     ListEmptyComponent={() => (
