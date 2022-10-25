@@ -13,9 +13,9 @@ export function Button({ title, ...rest }: Props) {
             fontSize="sm"
             rounded="sm"
             _pressed={{ bg: "green.500" }}
-
-            {...rest}>
-            <Heading color="white" fontSize="sm" >
+            {...rest}
+        >
+            <Heading color="white" fontSize="sm">
                 {title}
             </Heading>
         </ButtonNativeBase>

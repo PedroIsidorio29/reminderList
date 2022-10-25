@@ -10,8 +10,6 @@ export function SignIn() {
     const [name, setName] = useState("");
     const [senha, setSenha] = useState("");
 
-
-
     const { colors } = useTheme();
 
     return (
